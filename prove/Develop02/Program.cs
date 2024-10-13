@@ -9,6 +9,7 @@ class Program
         Console.WriteLine("Welcome to the Journal Program!");
 
         Journal Journal = new Journal();
+        PromptGenerator Prompts = new PromptGenerator();
 
         bool loop = true;
 
@@ -19,7 +20,9 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Add Prompt");
+            Console.WriteLine("6. Quit");
+
             Console.Write("What would you like to do? ");
 
             string choice = Console.ReadLine();
@@ -41,6 +44,9 @@ class Program
                     Journal.SaveFile();
                     break;
                 case "5":
+                    Prompts.AddPrompt();
+                    break;
+                case "6":
                     Console.WriteLine("Thanks for journaling!");
                     loop = false;
                     break;

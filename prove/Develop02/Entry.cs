@@ -13,6 +13,7 @@ public class Entry
     public void SetPrompt()
     {
         PromptGenerator Prompts = new PromptGenerator();
+        Prompts.LoadPrompts();
         _prompt = Prompts.GetRandom();
     }
 
