@@ -4,7 +4,7 @@ public class PromptGenerator
 
     public void LoadPrompts()
     {
-        string[] lines = System.IO.File.ReadAllLines("userPrompts.txt");
+        string[] lines = System.IO.File.ReadAllLines("prompts.txt");
         foreach (string line in lines)
         {
             _prompts.Add(line);
@@ -23,7 +23,7 @@ public class PromptGenerator
         Console.Write("What prompt would you like to add? ");
         string newPrompt = Console.ReadLine();
         _prompts.Add(newPrompt);
-        using (StreamWriter outputFile = new StreamWriter("userPrompts.txt", true))
+        using (StreamWriter outputFile = new StreamWriter("prompts.txt", true))
         {
             outputFile.WriteLine(newPrompt);
         }
