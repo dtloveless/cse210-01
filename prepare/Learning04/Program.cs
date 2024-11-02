@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning04 World!");
+        WritingAssignment assignment = new WritingAssignment("Daniel Loveless", "Programming", "The Art of Semicolons");
+        Console.WriteLine(assignment.GetSummary());
+        Console.WriteLine(assignment.GetWritingInformation());
     }
 }

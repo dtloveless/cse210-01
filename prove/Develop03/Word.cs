@@ -40,8 +40,25 @@ public class Word
     {
         if (_isHidden)
         {
-            string hiddenWord = new string('_', _length);
-            Console.Write(hiddenWord);
+            var displayText = new System.Text.StringBuilder();
+
+            // Iterate through each character in the word
+            foreach (char c in _text)
+            {
+                // Check if the character is a punctuation mark
+                if (char.IsPunctuation(c))
+                {
+                    // Keep punctuation visible
+                    displayText.Append(c);
+                }
+                else
+                {
+                    // Replace non-punctuation characters with underscores
+                    displayText.Append('_');
+                }
+            }
+
+            Console.Write(displayText.ToString());
         }
         else
         {
